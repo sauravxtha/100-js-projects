@@ -8,6 +8,7 @@ let startTime = 0;
 let elapsedTime = 0;
 let timerId;
 let lap = 0;
+stopBtn.disabled = true;
 
 startBtn.addEventListener("click", startTimer);
 stopBtn.addEventListener("click", stopTimer);
@@ -16,6 +17,8 @@ resetBtn.addEventListener("click", resetTimer);
 
 function startTimer() {
   startBtn.disabled = true;
+  stopBtn.disabled = false;
+
   let newDate = new Date();
   startTime = newDate.getTime() - elapsedTime;
 
@@ -28,6 +31,7 @@ function startTimer() {
 
 function stopTimer() {
   startBtn.disabled = false;
+  stopBtn.disabled = true;
   clearInterval(timerId);
 }
 
@@ -50,6 +54,7 @@ function formatTime(time) {
 
 function resetTimer() {
   startBtn.disabled = false;
+  stopBtn.disabled = false;
   clearInterval(timerId);
   startTime = 0;
   elapsedTime = 0;
