@@ -6,7 +6,6 @@ const recipeListEl = document.querySelector("#recipeList");
 
 function displayRecipes(recipes) {
   recipes.forEach((recipe) => {
-    console.log(recipe.summary);
     const recipeItemEl = document.createElement("li");
     recipeItemEl.classList.add("recipe-item");
 
